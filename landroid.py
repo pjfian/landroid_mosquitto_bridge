@@ -87,11 +87,11 @@ class LandroidCloud:
             if product["id"] == self.product_id:
                 for board in self.boards:
                     if product["board_id"] == board["id"]:
-                        self.mqtt_topic_prefix = board["mqtt_topic_prefix"]
+                        self.mqtt_topic_prefix = board["code"]
                         logging.info("Board %s selected" % self.mqtt_topic_prefix)
                         return
 
-        logging.error("Coluld not find Board in List")
+        logging.error("Could not find Board in List")
         sys.exit(1)
 
 
